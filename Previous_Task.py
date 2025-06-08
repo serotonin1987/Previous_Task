@@ -2,7 +2,7 @@ import asyncio
 import time
 
 class AsyncTask:
-    def __init__(self, name, delay, description):  # ✅ исправлено
+    def __init__(self, name, delay, description):
         self.name = name
         self.delay = delay
         self.description = description
@@ -16,7 +16,7 @@ class AsyncTask:
         return f"Результат {self.name}"
 
 class Program:
-    def __init__(self):  # ✅ исправлено
+    def __init__(self):
         self.tasks = []
 
     def add_task(self, task: AsyncTask):
@@ -36,7 +36,6 @@ class Program:
         print(f"[{time.strftime('%H:%M:%S', time.localtime(program_end_time))}] Программа завершена.")
         print(f"Общая продолжительность работы программы: {program_end_time - program_start_time:.2f} секунд.")
 
-# ✅ исправлено имя точки входа
 if __name__ == "__main__":
     program = Program()
     program.add_task(AsyncTask("загрузки", 3, "загрузки файла"))
